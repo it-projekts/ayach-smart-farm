@@ -1,0 +1,177 @@
+/* ── NAVBAR — Transparent + Sticky, KNPA-style ── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Transparent on top of hero */
+.navbar--transparent {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Solid once scrolled */
+.navbar--scrolled {
+  background: var(--green-deep);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.28);
+}
+
+/* Top contact bar — hidden when transparent (over hero) */
+.navbar-topbar {
+  background: rgba(0,0,0,0.35);
+  padding: 5px 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: opacity 0.3s;
+}
+.navbar--transparent .navbar-topbar {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+.navbar-topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.77rem;
+  color: rgba(255,255,255,0.72);
+  flex-wrap: wrap;
+}
+.navbar-topbar-inner span { display: flex; align-items: center; gap: 5px; }
+.navbar-socials { margin-left: auto; display: flex; gap: 8px; }
+.navbar-socials a {
+  width: 26px; height: 26px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.navbar-socials a:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Main nav row */
+.navbar-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  height: 68px;
+  gap: 0;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+.navbar-logo-icon {
+  width: 42px; height: 42px;
+  background: var(--green-bright);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px;
+}
+.navbar-logo-img  { height: 42px; width: auto; object-fit: contain; }
+.navbar-logo-name {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+/* Desktop links — KNPA style: spaced, bold, white */
+.navbar-links {
+  display: flex;
+  align-items: stretch;
+  height: 68px;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav-link:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.nav-link--active {
+  color: var(--gold) !important;
+  border-bottom-color: var(--gold) !important;
+}
+
+/* Hamburger */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.hamburger-bar {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Mobile drawer */
+.navbar-mobile-drawer {
+  display: flex;
+  flex-direction: column;
+  background: var(--green-deep);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 0.8rem 1.5rem 1.5rem;
+  gap: 2px;
+  animation: slideDown 0.22s ease;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mobile-link {
+  padding: 11px 14px;
+  font-size: 0.95rem; font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  border-left: 3px solid transparent;
+}
+.mobile-link:hover { color: var(--gold); border-left-color: var(--gold); }
+.mobile-link--active { color: var(--gold); border-left-color: var(--gold); }
+.mobile-cta { margin-top: 1rem; text-align: center; border-radius: 4px; }
+
+@media (max-width: 900px) {
+  .navbar-hamburger { display: flex; }
+  .navbar-links     { display: none; }
+  .navbar-topbar-inner { font-size: 0.72rem; gap: 0.8rem; }
+  .navbar-socials   { display: none; }
+}
