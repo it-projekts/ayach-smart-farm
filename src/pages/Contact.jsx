@@ -100,12 +100,6 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="contact-hours reveal">
-              <div className="contact-hours-title">🕐 Office Hours</div>
-              <div>Monday – Friday: 8:00 AM – 5:00 PM</div>
-              <div>Saturday: 9:00 AM – 2:00 PM</div>
-              <div>Sunday: Closed (farm visits by appointment)</div>
-            </div>
           </div>
 
           {/* RIGHT — form */}
@@ -176,28 +170,12 @@ export default function Contact() {
           <p className="section-eyebrow reveal">Our Location</p>
           <h2 className="section-title reveal">Find the <span>farm</span></h2>
           <div className="reveal">
-            {/*
-              GOOGLE MAPS EMBED — Get your embed URL:
-              1. Go to Google Maps
-              2. Search "Amach Town Council, Lira District, Uganda"
-              3. Click Share → Embed a map
-              4. Copy the iframe src URL and paste it below
-
-              <iframe
-                title="Ayach Smart Farm on Google Maps"
-                src="https://www.google.com/maps/embed?pb=YOUR_CODE_HERE"
-                width="100%"
-                height="420"
-                style={{ border: 0, borderRadius: 8, display: 'block' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            */}
+            {
+}
             <div className="map-embed-placeholder">
               <span>🗺️</span>
-              <h4>Google Maps embed goes here</h4>
-              <p>Go to Google Maps → Search your location → Share → Embed a map → paste the iframe here</p>
+              <h4></h4>
+              <p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15948.468465132844!2d33.00494973278032!3d2.108454689093789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sug!4v1782674767298!5m2!1sen!2sug" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>Go to Google Maps → Search your location → Share → Embed a map → paste the iframe here</p>
             </div>
           </div>
         </div>
