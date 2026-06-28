@@ -406,10 +406,13 @@ background-image: url('/images/hero-bg.jpg');
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.4rem;
 }
-.op-icon  { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
-.op-title { font-weight: 700; font-size: 1rem; color: var(--green-deep); margin-bottom: 0.4rem; }
-.op-desc  { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; }
-
+.op-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+}
 /* ── CTA BAND ── */
 .home-cta-band { padding: 4rem 2rem; }
 .home-cta-inner {

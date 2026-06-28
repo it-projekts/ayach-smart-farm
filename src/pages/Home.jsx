@@ -3,28 +3,6 @@ import { Link } from 'react-router-dom';
 import useReveal from '../hooks/useReveal';
 import './Home.css';
 
-/* ── Info cards (replaces History|Organisation|Location) ── */
-const INFO_CARDS = [
-  {
-    icon: '📜',
-    title: 'Background',
-    desc: 'Ayach Smart Farm is an innovative integrated agribusiness in Lira District, combining modern technology with sustainable food production and community empowerment.',
-    to: '/about',
-  },
-  {
-    icon: '👁️',
-    title: 'Vision',
-    desc: 'To become a leading model of sustainable and technology-driven integrated farming in Uganda and beyond.',
-    to: '/about',
-  },
-  {
-    icon: '🎯',
-    title: 'Mission',
-    desc: 'To produce high-quality agricultural products through smart farming, value addition, and community empowerment while promoting sustainability and economic growth.',
-    to: '/about',
-  },
-];
-
 /* ── Ayach News items — replace with real news as you grow ── */
 const NEWS = [
   {
@@ -161,25 +139,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* ══════════════════════════════════════
-          INFO CARDS — Background | Vision | Mission
-          (replaces KNPA History|Organisation|Location)
-      ══════════════════════════════════════ */}
-      <section className="home-info-section">
-        <div className="home-info-label reveal">About Ayach Smart Farm</div>
-        <div className="home-info-grid">
-          {INFO_CARDS.map((card, i) => (
-            <div key={card.title} className={`home-info-card reveal reveal-delay-${i}`}>
-              <div className="info-card-title">{card.title}</div>
-              <div className="info-card-icon-wrap">
-                <div className="info-card-icon">{card.icon}</div>
-              </div>
-              <p className="info-card-desc">{card.desc}</p>
-              <Link to={card.to} className="info-card-more">MORE</Link>
-            </div>
-          ))}
-        </div>
-      </section>
+    
 
       
       {/* ══════════════════════════════════════
@@ -192,19 +152,19 @@ export default function Home() {
           <p className="section-lead reveal">An integrated model where every operation strengthens the others.</p>
           <div className="ops-grid">
             {[
-              { icon: '🍌', title: 'Banana Cultivation',    desc: 'Large-scale banana farming feeding our juice and wine production lines.' },
-              { icon: '☕', title: 'Coffee Farming',        desc: 'High-quality Robusta and Arabica coffee using climate-smart techniques.' },
-              { icon: '🐷', title: 'Piggery',              desc: 'Integrated pig rearing contributing income and organic fertiliser.' },
-              { icon: '🐓', title: 'Poultry',              desc: 'Free-range and commercial poultry for eggs and meat.' },
-              { icon: '🥤', title: 'Banana Juice & Wine',  desc: 'Premium value-added products from our yellow banana harvest.' },
-              { icon: '🌱', title: 'Demo & Learning Centre', desc: 'Hands-on smart farming training for farmers and students.' },
-            ].map((op, i) => (
-              <div key={op.title} className={`card reveal reveal-delay-${i % 4}`}>
-                <span className="op-icon">{op.icon}</span>
-                <h3 className="op-title">{op.title}</h3>
-                <p className="op-desc">{op.desc}</p>
-              </div>
-            ))}
+  { img: '/images/banana.jpg',  title: 'Banana Cultivation',    desc: 'Large-scale banana farming feeding our juice and wine production lines.' },
+  { img: '/images/coffee.jpg',  title: 'Coffee Farming',        desc: 'High-quality Robusta and Arabica coffee using climate-smart techniques.' },
+  { img: '/images/piggery.jpg', title: 'Piggery',               desc: 'Integrated pig rearing contributing income and organic fertiliser.' },
+  { img: '/images/poultry.jpg', title: 'Poultry',               desc: 'Free-range and commercial poultry for eggs and meat.' },
+  { img: '/images/juice.jpg',   title: 'Banana Juice & Wine',   desc: 'Premium value-added products from our yellow banana harvest.' },
+  { img: '/images/demo.jpg',    title: 'Demo & Learning Centre', desc: 'Hands-on smart farming training for farmers and students.' },
+].map((op, i) => (
+  <div key={op.title} className={`card reveal reveal-delay-${i % 4}`}>
+    <img src={op.img} alt={op.title} className="op-img" />
+    <h3 className="op-title">{op.title}</h3>
+    <p className="op-desc">{op.desc}</p>
+  </div>
+))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }} className="reveal">
             <Link to="/products" className="btn-outline">View All Products →</Link>
