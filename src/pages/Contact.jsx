@@ -163,23 +163,25 @@ export default function Contact() {
 
         </div>
       </section>
-
-      {/* Map */}
-      <section className="section bg-cream" style={{ paddingTop: '1rem' }}>
-        <div className="section-inner">
-          <p className="section-eyebrow reveal">Our Location</p>
-          <h2 className="section-title reveal">Find the <span>farm</span></h2>
-          <div className="reveal">
-            {
-}
-            <div className="map-embed-placeholder">
-              <span>🗺️</span>
-              <h4></h4>
-              <p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15948.468465132844!2d33.00494973278032!3d2.108454689093789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sug!4v1782674767298!5m2!1sen!2sug" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>Go to Google Maps → Search your location → Share → Embed a map → paste the iframe here</p>
-            </div>
-          </div>
-        </div>
-      </section>
+            {/* Map */}
+<section className="section bg-cream" style={{ paddingTop: '1rem' }}>
+  <div className="section-inner">
+    <p className="section-eyebrow reveal">Our Location</p>
+    <h2 className="section-title reveal">Find the <span>farm</span></h2>
+    <div className="reveal">
+      <iframe
+        title="Ayach Smart Farm Location"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15948.468465132844!2d33.00494973278032!3d2.108454689093789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sug!4v1782674767298!5m2!1sen!2sug"
+        width="100%"
+        height="420"
+        style={{ border: 0, borderRadius: 8, display: 'block' }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
+  </div>
+</section>
     </>
   );
 }
