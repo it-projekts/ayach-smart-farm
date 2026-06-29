@@ -91,7 +91,7 @@ export default function Home() {
           <p className="home-hero-sub hero-animate">
             An integrated agribusiness combining modern technology,
             sustainable farming, and community empowerment in the
-            heart of Acholi land.
+            heart of Lira.
           </p>
           <div className="home-hero-btns hero-animate">
             <Link to="/products" className="hero-btn-primary">Explore Our Farm</Link>
