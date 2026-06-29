@@ -82,37 +82,30 @@ export default function Community() {
       </section>
 
       {/* Gallery placeholder */}
-      <section className="section bg-cream">
-        <div className="section-inner">
-          <p className="section-eyebrow reveal">Community in Action</p>
-          <h2 className="section-title reveal">Photo <span>gallery</span></h2>
-          <p className="section-lead reveal">
-            Replace these placeholders with your real community event photos.
-          </p>
-          <div className="gallery-grid">
-            {[
-              'Community members testing banana juice',
-              'Farmer empowerment session',
-              'Inspection of banana garden',
-              'Youth training at the farm',
-              'Demonstration centre visit',
-              'Partnership event',
-            ].map((caption, i) => (
-              <div key={i} className={`gallery-item reveal reveal-delay-${i % 3}`}>
-                {/*
-                  GALLERY IMAGE — replace with:
-                  <img src={`/images/community-${i+1}.jpg`} alt={caption} className="gallery-img" />
-                */}
-                <div className="gallery-placeholder">
-                  <span>📸</span>
-                </div>
-                <p className="gallery-caption">{caption}</p>
-              </div>
-            ))}
-          </div>
+        <section className="section bg-cream">
+  <div className="section-inner">
+    <p className="section-eyebrow reveal">Community in Action</p>
+    <h2 className="section-title reveal">Photo <span>gallery</span></h2>
+    <p className="section-lead reveal">
+      Life at Ayach Smart Farm — farming, community, and growth.
+    </p>
+    <div className="gallery-grid">
+      {[
+        { img: '/images/gallery-1.jpg', caption: 'Community members testing banana juice' },
+        { img: '/images/gallery-2.jpg', caption: 'Farmer empowerment session at the farm' },
+        { img: '/images/gallery-3.jpg', caption: 'Inspection of the banana garden' },
+        { img: '/images/gallery-4.jpg', caption: 'Youth training at Ayach Smart Farm' },
+        { img: '/images/gallery-5.jpg', caption: 'Demonstration centre visit' },
+        { img: '/images/gallery-6.jpg', caption: 'Community partnership event' },
+      ].map((item, i) => (
+        <div key={i} className={`gallery-item reveal reveal-delay-${i % 3}`}>
+          <img src={item.img} alt={item.caption} className="gallery-img" />
+          <p className="gallery-caption">{item.caption}</p>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       {/* Video placeholder */}
       <section className="section bg-dark">
         <div className="section-inner" style={{ textAlign: 'center' }}>
