@@ -59,7 +59,6 @@ export default function Community() {
       {/* HERO */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <span className="page-hero-eyebrow">Beyond the Farm Gate</span>
           <h1>Community <span>Empowerment</span></h1>
           <p>A farm's true harvest is measured not just in produce, but in the lives it transforms.</p>
         </div>
