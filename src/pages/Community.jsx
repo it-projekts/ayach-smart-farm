@@ -36,6 +36,12 @@ const PROGRAMS = [
   },
 ];
 
+const IMPACT_STATS = [
+  { num: '100+', label: 'Farmers Trained' },
+  { num: '20+',  label: 'Youth Employed' },
+  { num: '5+',   label: 'Partner Organisations' },
+  { num: '∞',    label: 'Community Sessions' },
+];
 
 const GALLERY = [
   { img: '/images/gallery-1.jpg', caption: 'Community members testing banana juice' },
