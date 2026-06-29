@@ -121,40 +121,6 @@ export default function Community() {
         </div>
       </section>
 
-      {/* VIDEO */}
-      <section className="section bg-dark">
-        <div className="section-inner" style={{ textAlign: 'center' }}>
-          <p className="section-eyebrow reveal" style={{ color: 'var(--green-light)' }}>See It Yourself</p>
-          <h2 className="section-title reveal" style={{ color: 'var(--white)' }}>
-            Watch our <span>story</span>
-          </h2>
-          <p className="reveal" style={{ color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
-            The story of Ayach Smart Farm — from the soil to the community.
-          </p>
-          <div className="video-placeholder reveal">
-            {/*
-              REPLACE with your video:
-
-              YouTube:
-              <iframe
-                title="Ayach Smart Farm"
-                width="100%" height="100%"
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                frameBorder="0" allowFullScreen
-              />
-
-              Local video file:
-              <video controls width="100%" poster="/images/video-poster.jpg">
-                <source src="/videos/farm-story.mp4" type="video/mp4" />
-              </video>
-            */}
-            <span>▶️</span>
-            <p>Your farm video goes here</p>
-            <small>/public/videos/farm-story.mp4 or YouTube embed</small>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="section bg-cream" style={{ textAlign: 'center' }}>
         <div className="section-inner reveal">
