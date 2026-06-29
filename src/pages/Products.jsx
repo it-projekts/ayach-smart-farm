@@ -11,8 +11,7 @@ const PRODUCTS = [
     title: 'Banana Cultivation',
     tagline: 'The backbone of our farm',
     desc: 'We cultivate a large-scale banana garden serving as the foundation of our value-addition chain. Our bananas supply the local market as fresh fruit and feed directly into our juice and wine production lines.',
-    details: ['Matooke (cooking bananas)', 'Yellow dessert bananas', 'Tissue-culture varieties', 'Organic soil management'],
-    image: 'bananas',
+   
   },
   {
     id: 'coffee',
@@ -21,8 +20,7 @@ const PRODUCTS = [
     title: 'Coffee Farming',
     tagline: 'Premium quality Ugandan coffee',
     desc: 'High-quality coffee cultivation using modern agronomy practices. We grow both Robusta and Arabica varieties, applying climate-smart techniques to maximise yield and market value.',
-    details: ['Robusta varieties', 'Arabica varieties', 'Good Agricultural Practices (GAP)', 'Direct market linkages'],
-    image: 'coffee',
+
   },
   {
     id: 'juice',
@@ -31,8 +29,7 @@ const PRODUCTS = [
     title: 'Banana Juice',
     tagline: 'Pure, natural, locally made',
     desc: 'Freshly produced banana juice from ripe yellow bananas. Our juice reduces post-harvest losses while creating a premium natural product for local and regional markets. No artificial additives.',
-    details: ['100% natural ingredients', 'Yellow banana base', 'No preservatives', 'Fresh local production'],
-    image: 'juice',
+    
   },
   {
     id: 'wine',
@@ -41,8 +38,7 @@ const PRODUCTS = [
     title: 'Banana Wine',
     tagline: 'Traditional craft, modern quality',
     desc: 'Artisan banana wine produced through a carefully managed fermentation process. A uniquely Ugandan product that showcases the versatility of our banana harvest and commands premium pricing.',
-    details: ['Traditional Ugandan recipe', 'Controlled fermentation', 'Premium packaging', 'Gift & export potential'],
-    image: 'wine',
+    
   },
   {
     id: 'piggery',
@@ -51,8 +47,7 @@ const PRODUCTS = [
     title: 'Piggery',
     tagline: 'Integrated livestock management',
     desc: 'Commercial pig rearing fully integrated into our nutrient cycle. Pig waste feeds our biogas system and organic compost, while the livestock themselves generate income and protein for the community.',
-    details: ['Commercial breeds', 'Organic waste integration', 'Local market supply', 'Biogas byproduct'],
-    image: 'piggery',
+    
   },
   {
     id: 'poultry',
@@ -61,8 +56,7 @@ const PRODUCTS = [
     title: 'Poultry Keeping',
     tagline: 'Eggs and meat for local markets',
     desc: 'Free-range and commercial poultry operation producing eggs and meat for local and regional markets. Managed with attention to animal welfare and biosecurity standards.',
-    details: ['Layer hens (eggs)', 'Broilers (meat)', 'Free-range management', 'Biosecurity protocols'],
-    image: 'poultry',
+  
   },
 ];
 
@@ -128,11 +122,7 @@ export default function Products() {
                   <h3 className="product-title">{product.title}</h3>
                   <p className="product-tagline">{product.tagline}</p>
                   <p className="product-desc">{product.desc}</p>
-                  <ul className="product-details">
-                    {product.details.map(d => (
-                      <li key={d}>✓ {d}</li>
-                    ))}
-                  </ul>
+                  
                 </div>
               </div>
             ))}

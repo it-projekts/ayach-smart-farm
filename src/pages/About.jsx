@@ -10,7 +10,7 @@ const VALUES = [
     desc: 'Embracing modern technology and smart farming methods to continuously improve productivity and efficiency.',
   },
   {
-    img: '/images/value-sustainability.jpg',
+    img: '/images/value-sustainability.png',
     title: 'Sustainability',
     desc: 'Farming in harmony with nature — conserving soil, water, and biodiversity for future generations.',
   },
@@ -32,10 +32,8 @@ const VALUES = [
 ];
 
 const TEAM_PLACEHOLDER = [
-  { initials: 'AF', role: 'Farm Director & Founder' },
-  { initials: 'FM', role: 'Agronomy Lead' },
-  { initials: 'CO', role: 'Community Programs Coordinator' },
-  { initials: 'PM', role: 'Value Addition Manager' },
+  { img: '/images/team-1.jpg', name: 'OLOBO PATRICK', role: 'Farm Director & Founder' },
+ 
 ];
 
 export default function About() {
@@ -45,7 +43,6 @@ export default function About() {
       {/* HERO */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <span className="page-hero-eyebrow">Our Story</span>
           <h1>About <span>Ayach Smart Farm</span></h1>
           <p>An integrated agribusiness rooted in the soil of Lira District, growing with purpose and passion.</p>
         </div>
@@ -55,14 +52,10 @@ export default function About() {
       <section className="section">
         <div className="section-inner about-overview-grid">
           <div className="reveal">
-            {/*
-              FARM PHOTO — replace placeholder with:
-              <img src="/images/about-farm.jpg" alt="Ayach Smart Farm" className="about-img" />
-            */}
-            <div className="img-placeholder">
-              <span>📸</span>
-              <p>Farm overview photo<br /><small>/images/about-farm.jpg</small></p>
-            </div>
+            {
+              <img src="/images/about-farm.jpg" alt="Ayach Smart Farm" className="about-img" width="500px" height="600px" />
+            }
+            
           </div>
           <div>
             <p className="section-eyebrow reveal">Who We Are</p>
@@ -90,7 +83,6 @@ export default function About() {
       {/* VISION & MISSION */}
       <section className="section bg-dark about-vm-section">
         <div className="section-inner">
-          <p className="section-eyebrow reveal" style={{ color: 'var(--green-light)' }}>What Drives Us</p>
           <h2 className="section-title reveal" style={{ color: 'var(--white)' }}>
             Our <span>vision</span> and mission
           </h2>
@@ -116,7 +108,6 @@ export default function About() {
       {/* CORE VALUES */}
       <section className="section bg-cream">
         <div className="section-inner">
-          <p className="section-eyebrow reveal">What We Stand For</p>
           <h2 className="section-title reveal">Our core <span>values</span></h2>
           <p className="section-lead reveal">Everything we do is rooted in these five principles.</p>
           <div className="values-grid">
@@ -136,35 +127,19 @@ export default function About() {
       {/* TEAM */}
       <section className="section">
         <div className="section-inner">
-          <p className="section-eyebrow reveal">The People Behind the Farm</p>
-          <h2 className="section-title reveal">Meet the <span>team</span></h2>
+          <p className="section-eyebrow reveal">The Person Behind the Farm</p>
           <p className="section-lead reveal">
-            The passionate people driving smart agriculture in Northern Uganda.
+            The passionate person driving smart agriculture in Northern Uganda.
           </p>
           <div className="team-grid">
             {TEAM_PLACEHOLDER.map((member, i) => (
-              <div key={i} className={`team-card reveal reveal-delay-${i % 4}`}>
-                {/*
-                  TEAM PHOTO — replace avatar with real photo:
-                  <img src="/images/team-1.jpg" alt="Name" className="team-photo" />
-                */}
-                <div className="team-avatar">{member.initials}</div>
-                <div className="team-name">Team Member Name</div>
-                <div className="team-role">{member.role}</div>
-              </div>
-            ))}
+  <div key={i} className={`team-card reveal reveal-delay-${i % 4}`}>
+    <img src={member.img} alt={member.name} className="team-photo" />
+    <div className="team-name">{member.name}</div>
+    <div className="team-role">{member.role}</div>
+  </div>
+))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section bg-cream" style={{ textAlign: 'center' }}>
-        <div className="section-inner reveal">
-          <h2 className="section-title">Want to visit or <span>work with us?</span></h2>
-          <p style={{ color: 'var(--text-mid)', maxWidth: 500, margin: '0 auto 2rem' }}>
-            We welcome farm visits, partnerships, and collaborations that advance smart agriculture.
-          </p>
-          <Link to="/contact" className="btn-primary">Get in Touch →</Link>
         </div>
       </section>
     </>
