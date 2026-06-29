@@ -4,11 +4,31 @@ import useReveal from '../hooks/useReveal';
 import './About.css';
 
 const VALUES = [
-  { icon: '💡', title: 'Innovation',            desc: 'Embracing modern technology and smart farming methods to continuously improve productivity and efficiency.' },
-  { icon: '♻️', title: 'Sustainability',         desc: 'Farming in harmony with nature — conserving soil, water, and biodiversity for future generations.' },
-  { icon: '🤝', title: 'Integrity',              desc: 'Honest, transparent dealings with our customers, partners, community, and the environment.' },
-  { icon: '⭐', title: 'Excellence',             desc: 'Committed to the highest quality in every product, process, and service we deliver.' },
-  { icon: '👥', title: 'Community Empowerment', desc: 'Placing people at the centre — training farmers, creating jobs, and growing together.' },
+  {
+    img: '/images/value-innovation.jpg',
+    title: 'Innovation',
+    desc: 'Embracing modern technology and smart farming methods to continuously improve productivity and efficiency.',
+  },
+  {
+    img: '/images/value-sustainability.jpg',
+    title: 'Sustainability',
+    desc: 'Farming in harmony with nature — conserving soil, water, and biodiversity for future generations.',
+  },
+  {
+    img: '/images/value-integrity.jpg',
+    title: 'Integrity',
+    desc: 'Honest, transparent dealings with our customers, partners, community, and the environment.',
+  },
+  {
+    img: '/images/value-excellence.jpg',
+    title: 'Excellence',
+    desc: 'Committed to the highest quality in every product, process, and service we deliver.',
+  },
+  {
+    img: '/images/value-community.jpg',
+    title: 'Community Empowerment',
+    desc: 'Placing people at the centre — training farmers, creating jobs, and growing together.',
+  },
 ];
 
 const TEAM_PLACEHOLDER = [
@@ -36,8 +56,8 @@ export default function About() {
         <div className="section-inner about-overview-grid">
           <div className="reveal">
             {/*
-              FARM PHOTO — replace placeholder with real image:
-              <img src="/images/about-farm.jpg" alt="Ayach Smart Farm overview" className="about-img" />
+              FARM PHOTO — replace placeholder with:
+              <img src="/images/about-farm.jpg" alt="Ayach Smart Farm" className="about-img" />
             */}
             <div className="img-placeholder">
               <span>📸</span>
@@ -76,7 +96,6 @@ export default function About() {
           </h2>
           <div className="about-vm-grid">
             <div className="about-vm-card reveal">
-              <div className="about-vm-icon">👁️</div>
               <h3>Vision</h3>
               <p>
                 To become a leading model of sustainable and technology-driven integrated farming
@@ -84,7 +103,6 @@ export default function About() {
               </p>
             </div>
             <div className="about-vm-card reveal reveal-delay-1">
-              <div className="about-vm-icon">🎯</div>
               <h3>Mission</h3>
               <p>
                 To produce high-quality agricultural products through smart farming, value addition,
@@ -104,65 +122,31 @@ export default function About() {
           <div className="values-grid">
             {VALUES.map((v, i) => (
               <div key={v.title} className={`values-card reveal reveal-delay-${i % 4}`}>
-                <div className="values-icon">{v.icon}</div>
-                <h3>{v.title}</h3>
-                <p>{v.desc}</p>
+                <img src={v.img} alt={v.title} className="values-img" />
+                <div className="values-body">
+                  <h3>{v.title}</h3>
+                  <p>{v.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* LOCATION */}
-      <section className="section">
-        <div className="section-inner about-location-grid">
-          <div>
-            <p className="section-eyebrow reveal">Find Us</p>
-            <h2 className="section-title reveal">Where we <span>are</span></h2>
-            <div className="location-detail reveal">
-              <div className="location-row"><span>📍</span><div><strong>Ayach Cell, Ayach Ward</strong><br />Amach Town Council<br />Lira District, Northern Uganda</div></div>
-              <div className="location-row"><span>📞</span><div><a href="tel:+256794848888">(+256) 794 848 888</a></div></div>
-              <div className="location-row"><span>✉️</span><div><a href="mailto:ayachsmartfarm@gmail.com">ayachsmartfarm@gmail.com</a></div></div>
-              <div className="location-row"><span>🌐</span><div><a href="https://ayachsmartfarm.online" target="_blank" rel="noreferrer">ayachsmartfarm.online</a></div></div>
-            </div>
-            <Link to="/contact" className="btn-primary reveal" style={{ display: 'inline-block', marginTop: '1.5rem' }}>
-              Plan a Visit →
-            </Link>
-          </div>
-          <div className="reveal">
-            {/*
-              MAP EMBED — paste a Google Maps embed iframe here.
-              Example (replace src with your actual embed URL from Google Maps → Share → Embed):
-              <iframe
-                title="Ayach Smart Farm location"
-                src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
-                width="100%" height="340" style={{ border: 0, borderRadius: 8 }}
-                allowFullScreen loading="lazy"
-              />
-            */}
-            <div className="map-placeholder">
-              <span>🗺️</span>
-              <p>Google Maps embed goes here</p>
-              <small>Get embed code from Google Maps → Share → Embed a map</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* TEAM */}
-      <section className="section bg-cream">
+      <section className="section">
         <div className="section-inner">
           <p className="section-eyebrow reveal">The People Behind the Farm</p>
           <h2 className="section-title reveal">Meet the <span>team</span></h2>
           <p className="section-lead reveal">
-            Replace these placeholder cards with real photos and names of your team members.
+            The passionate people driving smart agriculture in Northern Uganda.
           </p>
           <div className="team-grid">
             {TEAM_PLACEHOLDER.map((member, i) => (
               <div key={i} className={`team-card reveal reveal-delay-${i % 4}`}>
                 {/*
-                  TEAM PHOTO — replace avatar div with:
-                  <img src="/images/team-name.jpg" alt="Name" className="team-photo" />
+                  TEAM PHOTO — replace avatar with real photo:
+                  <img src="/images/team-1.jpg" alt="Name" className="team-photo" />
                 */}
                 <div className="team-avatar">{member.initials}</div>
                 <div className="team-name">Team Member Name</div>
@@ -170,6 +154,17 @@ export default function About() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section bg-cream" style={{ textAlign: 'center' }}>
+        <div className="section-inner reveal">
+          <h2 className="section-title">Want to visit or <span>work with us?</span></h2>
+          <p style={{ color: 'var(--text-mid)', maxWidth: 500, margin: '0 auto 2rem' }}>
+            We welcome farm visits, partnerships, and collaborations that advance smart agriculture.
+          </p>
+          <Link to="/contact" className="btn-primary">Get in Touch →</Link>
         </div>
       </section>
     </>
