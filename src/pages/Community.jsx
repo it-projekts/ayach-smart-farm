@@ -42,39 +42,18 @@ const PROGRAMS = [
   },
 ];
 
-const IMPACT_STATS = [
-  { num: '100+', label: 'Farmers Trained' },
-  { num: '20+',  label: 'Youth Employed' },
-  { num: '5+',   label: 'Partner Organisations' },
-  { num: '∞',    label: 'Community Sessions' },
-];
-
 export default function Community() {
   useReveal();
   return (
     <>
       <div className="page-hero">
         <div className="page-hero-inner">
-          <span className="page-hero-eyebrow">Beyond the Farm Gate</span>
           <h1>Community <span>Empowerment</span></h1>
-          <p>A farm's true harvest is measured not just in produce, but in the lives it transforms.</p>
+          <p>The farm's true harvest is measured not just in produce, but in the lives it transforms.</p>
         </div>
       </div>
 
-      {/* Impact stats */}
-      <section className="section bg-cream community-impact-strip">
-        <div className="section-inner">
-          <div className="impact-stats-grid">
-            {IMPACT_STATS.map((stat, i) => (
-              <div key={stat.label} className={`impact-stat reveal reveal-delay-${i}`}>
-                <div className="impact-stat-num">{stat.num}</div>
-                <div className="impact-stat-label">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* Programs */}
       <section className="section">
         <div className="section-inner">
