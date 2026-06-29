@@ -2,46 +2,38 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useReveal from '../hooks/useReveal';
 import './Community.css';
-
 const PROGRAMS = [
   {
-    icon: '🎓',
+    img: '/images/program-1.jpg',
     title: 'Skills Development Training',
-    desc: 'Practical, hands-on training for local farmers covering modern cultivation techniques, post-harvest handling, storage, and basic business management. Sessions are held regularly at our on-farm demonstration centre.',
-    outcomes: ['Modern farming techniques', 'Post-harvest loss reduction', 'Storage and preservation', 'Basic bookkeeping for farmers'],
+    desc: 'Practical, hands-on training for local farmers covering modern cultivation techniques, post-harvest handling, storage, and basic business management.',
   },
   {
-    icon: '💼',
+    img: '/images/program-2.jpg',
     title: 'Agribusiness Mentorship',
-    desc: 'We guide smallholder farmers to transform subsistence farming into viable, market-oriented enterprises. Mentorship covers business planning, market access, pricing strategies, and record keeping.',
-    outcomes: ['Business plan development', 'Market linkage support', 'Pricing & costing skills', 'Access to buyers and markets'],
+    desc: 'We guide smallholder farmers to transform subsistence farming into viable, market-oriented enterprises covering business planning and market access.',
   },
   {
-    icon: '👷',
+    img: '/images/program-3.jpg',
     title: 'Youth Employment & Training',
-    desc: 'Ayach Smart Farm actively employs and trains young people from Lira District and surrounding communities. We believe the future of Ugandan agriculture lies in the hands of empowered, skilled youth.',
-    outcomes: ['On-farm employment', 'Vocational skills training', 'Entrepreneurship coaching', 'Career pathways in agribusiness'],
+    desc: 'Ayach Smart Farm actively employs and trains young people from Lira District. We believe the future of Ugandan agriculture lies in empowered, skilled youth.',
   },
   {
-    icon: '🌾',
+    img: '/images/program-4.jpg',
     title: 'Farmer Empowerment Sessions',
-    desc: 'Open community sessions held regularly at the farm, welcoming farmers from surrounding villages. These sessions combine knowledge sharing, demonstrations, and networking between farmers.',
-    outcomes: ['Open to all local farmers', 'Live farm demonstrations', 'Peer learning networks', 'Access to expert advice'],
+    desc: 'Open community sessions held regularly at the farm, welcoming farmers from surrounding villages combining knowledge sharing and live demonstrations.',
   },
   {
-    icon: '🏫',
+    img: '/images/program-5.jpg',
     title: 'Learning & Demonstration Centre',
-    desc: 'The farm serves as a fully operational demonstration centre where students, NGOs, government agencies, and development partners can observe smart farming practices in action.',
-    outcomes: ['Student field trips', 'NGO and partner visits', 'Research collaboration', 'Best-practice demonstration'],
+    desc: 'The farm serves as a fully operational demonstration centre where students, NGOs, government agencies and partners observe smart farming in action.',
   },
   {
-    icon: '🤝',
+    img: '/images/program-6.jpg',
     title: 'Community Partnerships',
-    desc: 'We actively partner with local government, NGOs, and development organisations to amplify community impact — co-hosting events, supporting agricultural extension, and linking farmers to finance and markets.',
-    outcomes: ['Government partnerships', 'NGO collaboration', 'Agricultural extension support', 'Farmer finance linkages'],
+    desc: 'We actively partner with local government, NGOs and development organisations to amplify community impact and link farmers to finance and markets.',
   },
 ];
-
 export default function Community() {
   useReveal();
   return (
@@ -59,7 +51,6 @@ export default function Community() {
         <div className="section-inner">
           <p className="section-eyebrow reveal">Our Programs</p>
           <h2 className="section-title reveal">How we <span>empower</span> communities</h2>
-          <p className="section-lead reveal">Six active programs designed to build skills, create jobs, and strengthen the agricultural economy of Northern Uganda.</p>
 
           <div className="community-programs-grid">
             {PROGRAMS.map((prog, i) => (
