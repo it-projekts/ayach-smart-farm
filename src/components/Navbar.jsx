@@ -51,18 +51,28 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <nav className="navbar-links">
-          {NAV_LINKS.map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={to === '/'}
-              className={({ isActive }) => isActive ? 'nav-link nav-link--active' : 'nav-link'}
-            >
-              {label}
-            </NavLink>
-          ))}
-        </nav>
+        <nav className="navbar-links hide-mobile">
+  {NAV_LINKS.map(({ to, label }) => (
+    <NavLink
+      key={to}
+      to={to}
+      end={to === '/'}
+      className={({ isActive }) => isActive ? 'nav-link nav-link--active' : 'nav-link'}
+    >
+      {label}
+    </NavLink>
+  ))}
+</nav>
+
+{/* Search bar */}
+<div className="navbar-search">
+  <input
+    type="text"
+    placeholder="Search..."
+    className="navbar-search-input"
+  />
+  <button className="navbar-search-btn" aria-label="Search">🔍</button>
+</div>
 
         {/* Hamburger */}
         <button
