@@ -49,7 +49,7 @@ const GALLERY = [
   { img: '/images/gallery-3.jpg', caption: 'Inspection of the banana garden' },
   { img: '/images/gallery-4.jpg', caption: 'Youth training at Ayach Smart Farm' },
   { img: '/images/gallery-5.jpg', caption: 'Demonstration centre visit' },
-  { img: '/images/gallery-6.jpg', caption: 'Community partnership event' },
+  { img: '/images/gallery-7.jpg', caption: 'Community partnership event' },
 ];
 
 export default function Community() {
