@@ -98,11 +98,6 @@ export default function Home() {
            
               <img src="/images/about-farm.jpg" alt="Ayach Smart Farm" className="home-about-img" />
             
-            <div className="img-placeholder">
-              <span>📸</span>
-            </div>
-            <div className="home-about-badge">
-            </div>
           </div>
 
           <div className="home-about-text">
