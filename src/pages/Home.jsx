@@ -37,9 +37,6 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <section className="home-hero">
         
-         
-          background-image: url('/images/hero-bg.jpg');
-        
         <div className="home-hero-overlay" />
 
         {/* Left — text */}
@@ -62,7 +59,6 @@ export default function Home() {
               <img src="/images/video-thumb.jpg" alt="Farm video" className="video-thumb-img" />
             }
             <div className="video-thumb-placeholder">
-              <span>🌾</span>
             </div>
             <button className="video-play-btn" aria-label="Play video">▶</button>
           </div>
@@ -99,13 +95,11 @@ export default function Home() {
       <section className="section">
         <div className="section-inner home-about-grid">
           <div className="home-about-visual reveal">
-            {/*
-              FARM OVERVIEW PHOTO:
+           
               <img src="/images/about-farm.jpg" alt="Ayach Smart Farm" className="home-about-img" />
-            */}
+            
             <div className="img-placeholder">
               <span>📸</span>
-              <p>Add farm photo<br /><small>/images/about-farm.jpg</small></p>
             </div>
             <div className="home-about-badge">
             </div>
