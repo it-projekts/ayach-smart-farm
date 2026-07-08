@@ -67,7 +67,8 @@
   align-items: center;
   padding: 0 2rem;
   height: 68px;
-  gap: 0;
+  gap: 3rem;
+  
 }
 
 /* Logo */
@@ -78,6 +79,14 @@
   text-decoration: none;
   flex-shrink: 0;
   margin-right: auto;
+}
+.navbar-logo-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #c8891a;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
 }
 .navbar-logo-icon {
   width: 42px; height: 42px;
