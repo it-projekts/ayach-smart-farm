@@ -6,6 +6,11 @@
   color: rgba(255,255,255,0.65);
   font-size: 0.88rem;
 }
+.home-hero {
+  background-image: url('/images/hero-bg.jpg');  /* ← add this */
+  background-size: cover;
+  background-position: center;
+  
 
 .op-img {
   width: 100%;
