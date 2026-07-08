@@ -3,59 +3,26 @@ import { Link } from 'react-router-dom';
 import useReveal from '../hooks/useReveal';
 import './Home.css';
 
+const OPERATIONS = [
+  { img: '/images/banana.jpg',  title: 'Banana Cultivation',     desc: 'Large-scale banana farming feeding our juice and wine production lines.' },
+  { img: '/images/coffee.jpg',  title: 'Coffee Farming',         desc: 'High-quality Robusta and Arabica coffee using climate-smart techniques.' },
+  { img: '/images/piggery.jpg', title: 'Piggery',                desc: 'Integrated pig rearing contributing income and organic fertiliser.' },
+  { img: '/images/poultry.jpg', title: 'Poultry',                desc: 'Free-range and commercial poultry for eggs and meat.' },
+  { img: '/images/juice.jpg',   title: 'Banana Juice & Wine',    desc: 'Premium value-added products from our yellow banana harvest.' },
+  { img: '/images/demo.jpg',    title: 'Demo & Learning Centre', desc: 'Hands-on smart farming training for farmers and students.' },
+];
 
-
-/* ── Ayach News items — replace with real news as you grow ── */
-const NEWS = [
-  {
-    id: 1,
-    img: null,           // replace with: '/images/news-1.jpg'
-    emoji: '🍌',
-    date: 'June 2026',
-    title: 'Community members sample new banana juice product at Ayach Smart Farm',
-  },
-  {
-    id: 2,
-    img: null,
-    emoji: '🌱',
-    date: 'May 2026',
-    title: 'Ayach Smart Farm hosts regional farmer empowerment session for Lira District',
-  },
-  {
-    id: 3,
-    img: null,
-    emoji: '☕',
-    date: 'April 2026',
-    title: 'Coffee cultivation expansion underway with climate-smart farming techniques',
-  },
-  {
-    id: 4,
-    img: null,
-    emoji: '🐷',
-    date: 'March 2026',
-    title: 'New piggery unit opens, creating five jobs for local youth in Amach Town Council',
-  },
-  {
-    id: 5,
-    img: null,
-    emoji: '🎓',
-    date: 'February 2026',
-    title: 'Agribusiness training program graduates first cohort of 30 smallholder farmers',
-  },
-  {
-    id: 6,
-    img: null,
-    emoji: '🏆',
-    date: 'January 2026',
-    title: 'Ayach Smart Farm recognised as model integrated farm by Lira District officials',
-  },
+const STATS = [
+  { num: '5+',   label: 'Core Operations' },
+  { num: '100%', label: 'Sustainable Practices' },
+  { num: '2+',   label: 'Value-Added Products' },
+  { num: '∞',    label: 'Community Impact' },
 ];
 
 export default function Home() {
   useReveal();
   const [videoOpen, setVideoOpen] = useState(false);
 
-  /* Hero text entrance */
   useEffect(() => {
     const els = document.querySelectorAll('.hero-animate');
     els.forEach((el, i) => {
@@ -66,22 +33,18 @@ export default function Home() {
   return (
     <>
       {/* ══════════════════════════════════════
-          HERO — full-screen background image
-          with centred text + video pop-up
+          HERO
       ══════════════════════════════════════ */}
       <section className="home-hero">
         {/*
-          BACKGROUND IMAGE:
-          Replace the gradient overlay with your real farm photo by adding
-          a CSS background-image in Home.css .home-hero, e.g.:
+          HERO BACKGROUND PHOTO:
+          Drop your best farm photo as /public/images/hero-bg.jpg
+          then uncomment the line below in Home.css inside .home-hero:
           background-image: url('/images/hero-bg.jpg');
-
-          OR add an <img> tag here:
-          <img src="/images/hero-bg.jpg" alt="" className="hero-bg-img" />
         */}
         <div className="home-hero-overlay" />
 
-        {/* Left — text block */}
+        {/* Left — text */}
         <div className="home-hero-content">
           <span className="home-hero-eyebrow hero-animate">
             Lira District · Northern Uganda
@@ -99,16 +62,33 @@ export default function Home() {
             <Link to="/products" className="hero-btn-primary">Explore Our Farm</Link>
             <Link to="/community" className="hero-btn-outline">Community Programs</Link>
           </div>
+
+          {/* Stats strip */}
+          <div className="home-hero-stats hero-animate">
+            {STATS.map((s, i) => (
+              <React.Fragment key={s.label}>
+                {i > 0 && <div className="stat-divider" />}
+                <div className="hero-stat">
+                  <div className="hero-stat-num">{s.num}</div>
+                  <div className="hero-stat-label">{s.label}</div>
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
         </div>
 
-        {/* Right — video thumbnail pop-up (KNPA style) */}
+        {/* Right — video widget */}
         <div className="home-hero-video-wrap hero-animate">
           <div className="home-hero-video-thumb" onClick={() => setVideoOpen(true)}>
-           <img src="/images/video-thumb.jpg" alt="Farm video" className="video-thumb-img" />
+            {/*
+              VIDEO THUMBNAIL:
+              Replace placeholder with your thumbnail image:
+              <img src="/images/video-thumb.jpg" alt="Farm video" className="video-thumb-img" />
+            */}
             <div className="video-thumb-placeholder">
               <span>🌾</span>
               <p>Farm Video</p>
-              <small>Replace with your thumbnail image</small>
+              <small>Add /images/video-thumb.jpg</small>
             </div>
             <button className="video-play-btn" aria-label="Play video">▶</button>
           </div>
@@ -122,81 +102,106 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Video modal */}
+      {/* ── Video modal ── */}
       {videoOpen && (
         <div className="video-modal-overlay" onClick={() => setVideoOpen(false)}>
           <div className="video-modal" onClick={e => e.stopPropagation()}>
             <button className="video-modal-close" onClick={() => setVideoOpen(false)}>✕</button>
-            <video controls autoPlay width="100%" height="100%">
-  <source src="/videos/farm-story.mp4" type="video/mp4" />
-</video>
+            {/*
+              PASTE YOUR VIDEO HERE — choose one:
+
+              YouTube:
+              <iframe
+                title="Ayach Smart Farm"
+                width="100%" height="100%"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
+                frameBorder="0" allowFullScreen allow="autoplay"
+              />
+
+              Local MP4:
+              <video controls autoPlay width="100%" height="100%">
+                <source src="/videos/farm-story.mp4" type="video/mp4" />
+              </video>
+            */}
             <div className="video-modal-placeholder">
               <span>▶️</span>
-              <p>Paste your YouTube embed or video file path here</p>
-              <small>See comments in Home.js → video modal section</small>
+              <p>Paste your YouTube embed or video file here</p>
+              <small>/public/videos/farm-story.mp4</small>
             </div>
           </div>
         </div>
       )}
 
-      
-
       {/* ══════════════════════════════════════
-          NEWS — Ayach Smart Farm News
-          (replaces KNPA Korea.net News)
+          ABOUT SNAPSHOT
       ══════════════════════════════════════ */}
-      <section className="home-news-section">
-        <div className="home-news-header">
-          <span className="news-header-logo">🌿 Ayach Smart Farm</span>
-          <span className="news-header-suffix">News</span>
-          <Link to="/community" className="news-more-link">+ More</Link>
-        </div>
-        <div className="home-news-grid">
-          {NEWS.map((item, i) => (
-            <div key={item.id} className={`news-card reveal reveal-delay-${i % 3}`}>
-              {item.img
-                ? <img src={item.img} alt={item.title} className="news-card-img" />
-                : (
-                  <div className="news-card-img-placeholder">
-                    {/*
-                      REPLACE PLACEHOLDER with real photo:
-                      <img src="/images/news-1.jpg" alt="..." className="news-card-img" />
-                      Set item.img = '/images/news-1.jpg' in the NEWS array above
-                    */}
-                    <span>{item.emoji}</span>
-                  </div>
-                )
-              }
-              <div className="news-card-date">{item.date}</div>
-              <p className="news-card-title">{item.title}</p>
+      <section className="section">
+        <div className="section-inner home-about-grid">
+          <div className="home-about-visual reveal">
+            {/*
+              FARM OVERVIEW PHOTO:
+              <img src="/images/about-farm.jpg" alt="Ayach Smart Farm" className="home-about-img" />
+            */}
+            <div className="img-placeholder">
+              <span>📸</span>
+              <p>Add farm photo<br /><small>/images/about-farm.jpg</small></p>
             </div>
-          ))}
+            <div className="home-about-badge">
+              <strong>Located in</strong><br />Amach Town Council<br />Lira District, Uganda
+            </div>
+          </div>
+
+          <div className="home-about-text">
+            <p className="section-eyebrow reveal">Who We Are</p>
+            <h2 className="section-title reveal">
+              Built on the soil of <span>innovation</span> and purpose
+            </h2>
+            <p className="reveal" style={{ color: 'var(--text-mid)', marginBottom: '1rem' }}>
+              Ayach Smart Farm is an innovative, integrated agribusiness dedicated to sustainable
+              food production, value addition, and community empowerment. We combine modern
+              agriculture and technologies to optimise productivity and promote environmental conservation.
+            </p>
+            <p className="reveal" style={{ color: 'var(--text-mid)', marginBottom: '2rem' }}>
+              The farm also serves as a learning and demonstration centre supporting local farmers
+              through skills development, agribusiness training, and job creation.
+            </p>
+            <div className="home-vm-row reveal">
+              <div className="home-vm-card">
+                <div className="home-vm-label">Vision</div>
+                <div className="home-vm-text">To become a leading model of sustainable and technology-driven integrated farming in Uganda and beyond.</div>
+              </div>
+              <div className="home-vm-card">
+                <div className="home-vm-label">Mission</div>
+                <div className="home-vm-text">To produce high-quality agricultural products through smart farming, value addition and community empowerment.</div>
+              </div>
+            </div>
+            <Link to="/about" className="btn-primary reveal" style={{ display: 'inline-block', marginTop: '1.8rem' }}>
+              Learn More About Us →
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════
-          OPERATIONS STRIP
+          OPERATIONS — with real images
       ══════════════════════════════════════ */}
       <section className="section home-ops-section">
         <div className="section-inner">
           <p className="section-eyebrow reveal">What We Grow & Produce</p>
           <h2 className="section-title reveal">Core <span>Operations</span></h2>
-          <p className="section-lead reveal">An integrated model where every operation strengthens the others.</p>
+          <p className="section-lead reveal">
+            An integrated model where every operation strengthens the others — from farm to market, every step adds value.
+          </p>
           <div className="ops-grid">
-           {[
-  { img: '/images/banana.jpg',  title: 'Banana Cultivation',    desc: 'Large-scale banana farming feeding our juice and wine production lines.' },
-  { img: '/images/coffee.jpg',  title: 'Coffee Farming',        desc: 'High-quality Robusta and Arabica coffee using climate-smart techniques.' },
-  { img: '/images/piggery.jpg', title: 'Piggery',               desc: 'Integrated pig rearing contributing income and organic fertiliser.' },
-  { img: '/images/poultry.jpg', title: 'Poultry',               desc: 'Free-range and commercial poultry for eggs and meat.' },
-  { img: '/images/juice.jpg',   title: 'Banana Juice & Wine',   desc: 'Premium value-added products from our yellow banana harvest.' },
-  { img: '/images/demo.jpg',    title: 'Demo & Learning Centre', desc: 'Hands-on smart farming training for farmers and students.' },
-].map((op, i) => (
-  <div key={op.title} className={`card reveal reveal-delay-${i % 4}`}>
-    <img src={op.img} alt={op.title} className="op-img" />
-    <h3 className="op-title">{op.title}</h3>
-    <p className="op-desc">{op.desc}</p>
-  </div>
-))}
+            {OPERATIONS.map((op, i) => (
+              <div key={op.title} className={`ops-card reveal reveal-delay-${i % 4}`}>
+                <img src={op.img} alt={op.title} className="ops-card-img" />
+                <div className="ops-card-body">
+                  <h3 className="op-title">{op.title}</h3>
+                  <p className="op-desc">{op.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }} className="reveal">
             <Link to="/products" className="btn-outline">View All Products →</Link>
@@ -204,7 +209,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* ══════════════════════════════════════
+          COMMUNITY SNAPSHOT
+      ══════════════════════════════════════ */}
+      <section className="section home-community">
+        <div className="section-inner">
+          <p className="section-eyebrow reveal" style={{ color: 'var(--green-light)' }}>Beyond the Farm</p>
+          <h2 className="section-title reveal" style={{ color: 'var(--white)' }}>
+            Empowering the <span>community</span>
+          </h2>
+          <p className="section-lead reveal" style={{ color: 'rgba(255,255,255,0.65)' }}>
+            A farm's true yield is measured not just in harvests, but in the lives it lifts.
+          </p>
+          <div className="community-snippets">
+            {[
+              { icon: '🎓', title: 'Skills Training',        desc: 'Practical training for local farmers in modern techniques and post-harvest handling.' },
+              { icon: '💼', title: 'Agribusiness Mentorship', desc: 'Transforming subsistence farming into viable, market-oriented enterprises.' },
+              { icon: '👷', title: 'Youth Employment',        desc: 'Actively employing and training young people from Lira District.' },
+              { icon: '🌾', title: 'Farmer Empowerment',      desc: 'Regular open sessions for surrounding farming communities.' },
+            ].map((item, i) => (
+              <div key={item.title} className={`community-snippet reveal reveal-delay-${i % 4}`}>
+                <div className="community-snippet-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '2.5rem' }} className="reveal">
+            <Link to="/community" className="btn-outline-white">Explore Community Programs →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          CTA BAND
+      ══════════════════════════════════════ */}
       <section className="home-cta-band bg-cream">
         <div className="section-inner home-cta-inner reveal">
           <div>
