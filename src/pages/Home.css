@@ -10,7 +10,7 @@
   background-image: url('/images/hero-bg.jpg');  /* ← add this */
   background-size: cover;
   background-position: center;
-  
+}
 
 .op-img {
   width: 100%;
