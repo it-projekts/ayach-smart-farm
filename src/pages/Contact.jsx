@@ -18,22 +18,29 @@ export default function Contact() {
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    /* 
-      TO CONNECT A REAL BACKEND, replace this with a fetch() call:
-      await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      
-      Formspree (https://formspree.io) is free and works great for this.
-      Sign up, create a form, get your ID, and replace YOUR_FORM_ID above.
-    */
-    setSubmitted(true);
-    setForm({ name: '', contact: '', purpose: '', message: '' });
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('https://formspree.io/f/xpqgeeyv', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name:    form.name,
+        contact: form.contact,
+        purpose: form.purpose,
+        message: form.message,
+      }),
+    });
+    if (response.ok) {
+      setSubmitted(true);
+      setForm({ name: '', contact: '', purpose: '', message: '' });
+    } else {
+      alert('Something went wrong. Please try again or email us directly.');
+    }
+  } catch (error) {
+    alert('Network error. Please email us directly at ayachsmartfarm@gmail.com');
+  }
+};
 
   return (
     <>

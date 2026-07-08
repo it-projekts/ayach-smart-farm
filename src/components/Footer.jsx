@@ -7,12 +7,19 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
+
+        {/* Brand column */}
         <div className="footer-brand">
           <div className="footer-logo">
-            <span className="footer-logo-icon">🌿</span>
-            <span className="footer-logo-name">AYACH SMART FARM</span>
+            {/*
+              LOGO: logo.png is already in /public folder.
+              If your file has a different name, update src below.
+            */}
+            <img src="/logo.png" alt="Ayach Smart Farm" className="footer-logo-img" />
           </div>
-          <p className="footer-tagline">Transforming Lives Through Smart Agriculture in Northern Uganda.</p>
+          <p className="footer-tagline">
+            Transforming Lives Through Smart Agriculture in Northern Uganda.
+          </p>
           <div className="footer-socials">
             <a href="https://facebook.com"  target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
             <a href="https://x.com"         target="_blank" rel="noreferrer" aria-label="X">𝕏</a>
@@ -21,6 +28,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Quick Links */}
         <div className="footer-col">
           <h4>Quick Links</h4>
           <ul>
@@ -32,6 +40,7 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Operations */}
         <div className="footer-col">
           <h4>Our Operations</h4>
           <ul>
@@ -44,22 +53,34 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Contact */}
         <div className="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li>📞 (+256) 794 848 888</li>
-            <li>✉️ ayachsmartfarm@gmail.com</li>
-            <li>🌐 ayachsmartfarm.online</li>
-            <li style={{ marginTop: '0.5rem', lineHeight: 1.6 }}>
-              📍 Ayach Cell, Ayach Ward<br />Amach Town Council<br />Lira District, Northern Uganda
+            <li>
+              <a href="tel:+256794848888">📞 (+256) 794 848 888</a>
+            </li>
+            <li>
+              <a href="mailto:ayachsmartfarm@gmail.com">✉️ ayachsmartfarm@gmail.com</a>
+            </li>
+            <li>
+              <a href="https://ayachsmartfarm.online" target="_blank" rel="noreferrer">
+                🌐 ayachsmartfarm.online
+              </a>
+            </li>
+            <li className="footer-address">
+              📍 Ayach Cell, Ayach Ward<br />
+              Amach Town Council<br />
+              Lira District, Northern Uganda
             </li>
           </ul>
         </div>
+
       </div>
 
+      {/* Bottom bar */}
       <div className="footer-bottom">
         <span>© {year} Ayach Smart Farm. All rights reserved.</span>
-        <span>Designed with 💚 for sustainable agriculture</span>
       </div>
     </footer>
   );
