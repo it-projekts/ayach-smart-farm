@@ -48,37 +48,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* OVERVIEW */}
-      <section className="section">
-        <div className="section-inner about-overview-grid">
-          <div className="reveal">
-            {
-              <img src="/images/about-farm.jpg" alt="Ayach Smart Farm" className="about-img" width="500px" height="600px" />
-            }
-            
-          </div>
-          <div>
-            <p className="section-eyebrow reveal">Who We Are</p>
-            <h2 className="section-title reveal">Integrated farming, <span>purposeful impact</span></h2>
-            <p className="reveal" style={{ color: 'var(--text-mid)', marginBottom: '1rem' }}>
-              Ayach Smart Farm is an innovative, integrated agribusiness dedicated to sustainable food
-              production, value addition, and community empowerment. Located at Ayach Cell, Ayach Ward,
-              Amach Town Council in Lira District — the heart of Northern Uganda.
-            </p>
-            <p className="reveal" style={{ color: 'var(--text-mid)', marginBottom: '1rem' }}>
-              The farm combines modern agriculture and cutting-edge technologies to optimise
-              productivity and promote environmental conservation. Our core operations include banana
-              and coffee cultivation alongside livestock — piggery and poultry — and banana wine and juice production.
-            </p>
-            <p className="reveal" style={{ color: 'var(--text-mid)' }}>
-              Through value addition and market-oriented production, we transform agricultural produce
-              into high-quality products that increase income and reduce post-harvest losses. Ayach
-              Smart Farm also serves as a learning and demonstration centre supporting local farmers
-              through skills development, agribusiness training, and job creation.
-            </p>
-          </div>
-        </div>
-      </section>
+     
 
       {/* VISION & MISSION */}
       <section className="section bg-dark about-vm-section">
