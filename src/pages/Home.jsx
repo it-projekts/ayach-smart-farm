@@ -36,12 +36,10 @@ export default function Home() {
           HERO
       ══════════════════════════════════════ */}
       <section className="home-hero">
-        {/*
-          HERO BACKGROUND PHOTO:
-          Drop your best farm photo as /public/images/hero-bg.jpg
-          then uncomment the line below in Home.css inside .home-hero:
+        
+         
           background-image: url('/images/hero-bg.jpg');
-        */}
+        
         <div className="home-hero-overlay" />
 
         {/* Left — text */}
@@ -56,7 +54,7 @@ export default function Home() {
             sustainable farming, and community empowerment in the
             heart of Lira District.
           </p>
-         
+         </div>
         {/* Right — video widget */}
         <div className="home-hero-video-wrap hero-animate">
           <div className="home-hero-video-thumb" onClick={() => setVideoOpen(true)}>
@@ -127,19 +125,8 @@ export default function Home() {
               The farm also serves as a learning and demonstration centre supporting local farmers
               through skills development, agribusiness training, and job creation.
             </p>
-            <div className="home-vm-row reveal">
-              <div className="home-vm-card">
-                <div className="home-vm-label">Vision</div>
-                <div className="home-vm-text">To become a leading model of sustainable and technology-driven integrated farming in Uganda and beyond.</div>
-              </div>
-              <div className="home-vm-card">
-                <div className="home-vm-label">Mission</div>
-                <div className="home-vm-text">To produce high-quality agricultural products through smart farming, value addition and community empowerment.</div>
-              </div>
-            </div>
-            <Link to="/about" className="btn-primary reveal" style={{ display: 'inline-block', marginTop: '1.8rem' }}>
-              Learn More About Us →
-            </Link>
+           
+           
           </div>
         </div>
       </section>

@@ -12,12 +12,9 @@
   padding: 0 5vw;
   gap: 3rem;
   overflow: hidden;
-
-  /* HERO BACKGROUND — uncomment and set your photo:
   background-image: url('/images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
-  */
   background: linear-gradient(145deg, #0a1f0c 0%, #1a4a1f 45%, #0d3011 100%);
 }
 
